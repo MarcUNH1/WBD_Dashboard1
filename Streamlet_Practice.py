@@ -24,7 +24,8 @@ col = st.columns((.5, .4, 1), gap='medium')
 #    return props
 
 with col[0]:
-    st.image(r"C:\Users\maj266\Offline\Streamlit_Stuff\buoy.png", caption="UNH WBD Buoy", )
+#    st.image(r"C:\Users\maj266\Offline\Streamlit_Stuff\buoy.png", caption="UNH WBD Buoy", )
+    st.image(r"buoy.png", caption="UNH WBD Buoy", )
     st.table(
         {
             "first column": ["Site elevation:", "Air temp height:", "Anemometer height:", "Barometer elevation:", "Sea temp depth:", "Water depth:", "Watch circle radius:"],
