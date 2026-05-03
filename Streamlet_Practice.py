@@ -16,6 +16,7 @@ st.set_page_config(
 
 #data = pd.read_csv(r"C:\Users\maj266\Offline\Streamlit_Stuff\test_data_csv.csv")
 data = pd.read_csv(r"test_data_csv.csv")
+data.to_datetime(data['Time'])
 #st.dataframe(df)
 
 col = st.columns((.5, .4, 1), gap='medium')
@@ -59,7 +60,7 @@ with col[2]:
 
     t1.subheader("Wind Speed")
     fig_wspd = px.line(data, x="Time", y="wSPD")
-    t1.plotly_chart(fig_wspd, use_container_width=True, height=500, dtick=86400000.0)
+    t1.plotly_chart(fig_wspd, use_container_width=True, height=500, dtick="H1")
 
     t2.subheader("Wind Direction")
     fig_wdir = px.line(data, x="Time", y="wDIR")
