@@ -59,7 +59,7 @@ with col[2]:
 
     t1.subheader("Wind Speed")
     fig_wspd = px.line(data, x="Time", y="wSPD")
-    t1.plotly_chart(fig_wspd, use_container_width=True, height=500, ntick=10)
+    t1.plotly_chart(fig_wspd, use_container_width=True, height=500, dtick=86400000.0)
 
     t2.subheader("Wind Direction")
     fig_wdir = px.line(data, x="Time", y="wDIR")
