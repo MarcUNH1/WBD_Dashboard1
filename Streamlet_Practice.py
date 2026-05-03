@@ -57,11 +57,13 @@ with col[2]:
 #    df = rng(0).standard_normal((10, 1))
     st.title("Past 24 Hours")
     t1, t2, t3, t4, t5, t6, t7, t8 = st.tabs(["WSPD", "WDIR", "AirT", "AirP", "rH", "WaterT", "SigH", "Tp1"])
+    all_timestamps = []
+    all_timestamps.append(data['Time'])
 
     t1.subheader("Wind Speed")
     fig_wspd = px.line(data, x="Time", y="wSPD")
-    fig_wspd.update_xaxes(minallowed=min(data['Time']))
-    fig_wspd.update_xaxes(maxallowed=max(data['Time']))
+    fig_wspd.update_xaxes(minallowed=min(all_timestamps))
+    fig_wspd.update_xaxes(maxallowed=max(all_timestamps))
     t1.plotly_chart(fig_wspd, use_container_width=True, height=500)
 
     t2.subheader("Wind Direction")
