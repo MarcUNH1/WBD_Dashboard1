@@ -16,7 +16,7 @@ st.set_page_config(
 
 #data = pd.read_csv(r"C:\Users\maj266\Offline\Streamlit_Stuff\test_data_csv.csv")
 data = pd.read_csv(r"test_data_csv.csv")
-data['Time'] = data.to_datetime(data['Time'])
+data['Time'] = pd.to_datetime(data['Time'])
 #st.dataframe(df)
 
 col = st.columns((.5, .4, 1), gap='medium')
