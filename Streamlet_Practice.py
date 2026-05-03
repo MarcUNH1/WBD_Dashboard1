@@ -54,12 +54,12 @@ with col[1]:
 
 with col[2]:
 #    df = rng(0).standard_normal((10, 1))
-    st.title("Last 24 Hours Data")
+    st.title("Past 24 Hours")
     t1, t2, t3, t4, t5, t6, t7, t8 = st.tabs(["WSPD", "WDIR", "AirT", "AirP", "rH", "WaterT", "SigH", "Tp1"])
 
     t1.subheader("Wind Speed")
     fig_wspd = px.line(data, x="Time", y="wSPD")
-    t1.plotly_chart(fig_wspd, use_container_width=True, height=500)
+    t1.plotly_chart(fig_wspd, use_container_width=True, height=500, ntick=10)
 
     t2.subheader("Wind Direction")
     fig_wdir = px.line(data, x="Time", y="wDIR")
