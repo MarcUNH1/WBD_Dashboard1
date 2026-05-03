@@ -69,10 +69,6 @@ with col[2]:
         maxallowed = max(all_timestamps)
         )
     )
-
-
-    fig_wspd.update_xaxes(minallowed=min(all_timestamps))
-    fig_wspd.update_xaxes(maxallowed=max(all_timestamps))
     t1.plotly_chart(fig_wspd, use_container_width=True, height=500)
 
     t2.subheader("Wind Direction")
