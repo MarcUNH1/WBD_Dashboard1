@@ -5,8 +5,6 @@ import plotly.express as px
 import altair as alt
 from numpy.random import default_rng as rng
 
-
-
 #alt.theme.enable("dark")
 
 st.set_page_config(
@@ -25,12 +23,14 @@ col = st.columns((.5, .4, 1), gap='medium')
 #    return props
 
 with col[0]:
-#    st.image(r"C:\Users\maj266\Offline\Streamlit_Stuff\buoy.png", caption="UNH WBD Buoy", )
+    #    st.image(r"C:\Users\maj266\Offline\Streamlit_Stuff\buoy.png", caption="UNH WBD Buoy", )
     st.image(r"buoy.png", caption="UNH WBD Buoy", )
     st.table(
         {
-            "first column": ["Site elevation:", "Air temp height:", "Anemometer height:", "Barometer elevation:", "Sea temp depth:", "Water depth:", "Watch circle radius:"],
-            "second column": ["Sea Level", "3m above site elevation", "3m above site elevation", "3m above site elevation", "1m below site elevation", "70m", "70m"],
+            "first column": ["Site elevation:", "Air temp height:", "Anemometer height:", "Barometer elevation:",
+                             "Sea temp depth:", "Water depth:", "Watch circle radius:"],
+            "second column": ["Sea Level", "3m above site elevation", "3m above site elevation",
+                              "3m above site elevation", "1m below site elevation", "70m", "70m"],
         }, hide_header=True, border=False
     )
 with col[1]:
@@ -54,7 +54,7 @@ with col[1]:
     recent = st.table(data.iloc[-1, [1, 2, 3, 4, 5, 6, 7, 8]], hide_header=True)
 
 with col[2]:
-#    df = rng(0).standard_normal((10, 1))
+    #    df = rng(0).standard_normal((10, 1))
     st.title("Past 24 Hours")
     t1, t2, t3, t4, t5, t6, t7, t8 = st.tabs(["WSPD", "WDIR", "AirT", "AirP", "rH", "WaterT", "SigH", "Tp1"])
     all_timestamps = []
@@ -64,9 +64,9 @@ with col[2]:
     fig_wspd = px.line(data, x="Time", y="wSPD")
     fig_wspd.update_layout(
         xais=dict(
-        range = [min(all_timestamps), max(all_timestamps)],
-        minallowed = min(all_timestamps),
-        maxallowed = max(all_timestamps)
+            range=[min(all_timestamps), max(all_timestamps)],
+            minallowed=min(all_timestamps),
+            maxallowed=max(all_timestamps)
         )
     )
     t1.plotly_chart(fig_wspd, use_container_width=True, height=500)
