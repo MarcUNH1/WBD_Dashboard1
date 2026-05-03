@@ -63,11 +63,8 @@ with col[2]:
     t1.subheader("Wind Speed")
     fig_wspd = px.line(data, x="Time", y="wSPD")
     fig_wspd.update_layout(
-        xais=dict(
-            range=[min(all_timestamps), max(all_timestamps)],
-            minallowed=min(all_timestamps),
-            maxallowed=max(all_timestamps)
-        )
+        xais={'range': [min(all_timestamps), max(all_timestamps)], 'minallowed': min(all_timestamps),
+              'maxallowed': max(all_timestamps)}
     )
     t1.plotly_chart(fig_wspd, use_container_width=True, height=500)
 
