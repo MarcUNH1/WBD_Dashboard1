@@ -25,8 +25,7 @@ with col[0]:
         {
             "first column": ["Site elevation:", "Air temp height:", "Anemometer height:", "Barometer elevation:",
                              "Sea temp depth:", "Water depth:", "Watch circle radius:"],
-            "second column": ["Sea Level", "3m above site elevation", "3m above site elevation",
-                              "3m above site elevation", "1m below site elevation", "70m", "70m"],
+            "second column": ["Sea Level", "+3m", "+3m", "+3m", "-1m", "70m", "70m"],
         }, hide_header=True, border=False
     )
 with col[1]:
