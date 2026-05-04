@@ -48,7 +48,7 @@ with col[1]:
     )
 
     st.markdown("##### Latest Data", text_alignment="center", width="stretch")
-    st.markdown("###### Data As Of 2026-04-28 08:00:00Z", text_alignment="center", width="stretch")
+    st.markdown("###### As Of 2026-04-28 08:00:00Z", text_alignment="center", width="stretch")
     recent = st.table(data.iloc[-1, [1, 2, 3, 4, 5, 6, 7, 8]], hide_header=True)
 
 with col[2]:
