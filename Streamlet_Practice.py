@@ -58,8 +58,8 @@ with col[2]:
 
     t1.subheader("Wind Speed")
     fig_wspd = px.line(data, x="Time", y="wSPD")
-    fig_wspd.update_xaxes(autorangeoptions_maxallowed=data['Time'].max())
-    fig_wspd.update_xaxes(autorangeoptions_minallowed=data['Time'].min())
+    #   fig_wspd.update_xaxes(autorangeoptions_maxallowed=data['Time'].max())
+    #   fig_wspd.update_xaxes(autorangeoptions_minallowed=data['Time'].min())
 
     t1.plotly_chart(fig_wspd, width=True, height=500)
 
