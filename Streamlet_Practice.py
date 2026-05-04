@@ -55,11 +55,12 @@ with col[2]:
     t1, t2, t3, t4, t5, t6, t7, t8 = st.tabs(["WSPD", "WDIR", "AirT", "AirP", "rH", "WaterT", "SigH", "Tp1"])
     all_timestamps = []
     all_timestamps.append(data['Time'])
+    print(data['Time'].min())
     print(data['Time'].max())
     t1.subheader("Wind Speed")
     fig_wspd = px.line(data, x="Time", y="wSPD")
-    fig_wspd.update_xaxes(maxallowed=data['Time'].max())
-    fig_wspd.update_xaxes(minallowed=data['Time'].min())
+    fig_wspd.update_xaxes(maxallowed=data['Time'].max().timestamp())
+    fig_wspd.update_xaxes(minallowed=data['Time'].min().timestamp())
 
     t1.plotly_chart(fig_wspd, use_container_width=True, height=500)
 
