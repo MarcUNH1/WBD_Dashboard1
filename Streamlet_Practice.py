@@ -15,12 +15,8 @@ st.set_page_config(
 #data = pd.read_csv(r"C:\Users\maj266\Offline\Streamlit_Stuff\test_data_csv.csv")
 data = pd.read_csv(r"test_data_csv.csv")
 data['Time'] = pd.to_datetime(data['Time'])
-#st.dataframe(df)
 
 col = st.columns((.5, .4, 1), gap='medium')
-
-#def left_align(s, props='text-align: left;'):
-#    return props
 
 with col[0]:
     #    st.image(r"C:\Users\maj266\Offline\Streamlit_Stuff\buoy.png", caption="UNH WBD Buoy", )
@@ -63,10 +59,13 @@ with col[2]:
     t1.subheader("Wind Speed")
     fig_wspd = px.line(data, x="Time", y="wSPD")
     fig_wspd.update_layout(
-        xais={'range': [min(all_timestamps), max(all_timestamps)], 'minallowed': min(all_timestamps),
-              'maxallowed': max(all_timestamps)}
+        xaxis=dict(
+            range=[data['Time'].min(), data['Time'].max()],
+            minallowed=data['Time'].min(),
+            maxallowed=data['Time'].max()
+        )
     )
-    t1.plotly_chart(fig_wspd, use_container_width=True, height=500)
+    t1.plotly_chart(fig_wspd, width=True, height=500)
 
     t2.subheader("Wind Direction")
     fig_wdir = px.line(data, x="Time", y="wDIR")
