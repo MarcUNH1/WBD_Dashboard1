@@ -16,7 +16,7 @@ st.set_page_config(
 data = pd.read_csv(r"test_data_csv.csv")
 data['Time'] = pd.to_datetime(data['Time'])
 
-col = st.columns((.5, .4, 1), gap='medium')
+col = st.columns((.4, .4, 1), gap='medium')
 
 with col[0]:
     #    st.image(r"C:\Users\maj266\Offline\Streamlit_Stuff\buoy.png", caption="UNH WBD Buoy", )
@@ -28,6 +28,8 @@ with col[0]:
             "second column": ["Sea Level", "+3m", "+3m", "+3m", "-1m", "70m", "70m"],
         }, hide_header=True, border=False
     )
+    st.link_button("OPAL", "https://eos.unh.edu/ocean-process-analysis-laboratory",
+                   help="Link to UNH Ocean Process Analysis Laboratory")
 with col[1]:
     df_map = pd.DataFrame(
         {
@@ -36,15 +38,16 @@ with col[1]:
         },
         index=([1, 2]))
 
-    st.map(df_map, latitude="col1", longitude="col2", size=100, zoom=8, height=200)
+    st.map(df_map, latitude="col1", longitude="col2", size=100, zoom=8, height=190)
 
     st.table(
         {
-            "first column": ["Sinker Location", "Latest Location:", "Latest Telemetry:", " Battery Voltage:"],
+            "first column": ["Sinker Location", "Last Location:", "Last Telemetry:", " Battery Voltage:"],
             "second column": ["43.02°N, 70.54°W", "43.02°N, 70.54°W", "2026-04-28 08:00:00Z", "12.82v"],
-        }, hide_header=True, border=False, height=120
+        }, hide_header=True, border=False, height=130
     )
 
+    st.markdown("##### Latest Data", text_alignment="center", width="stretch")
     st.markdown("###### Data As Of 2026-04-28 08:00:00Z", text_alignment="center", width="stretch")
     recent = st.table(data.iloc[-1, [1, 2, 3, 4, 5, 6, 7, 8]], hide_header=True)
 
