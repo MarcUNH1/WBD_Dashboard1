@@ -40,8 +40,8 @@ with col[1]:
 
     st.table(
         {
-            "first column": ["Sinker Location", "Latest Location:", "Latest Telemetry:"],
-            "second column": ["43.02°N, 70.54°W", "43.02°N, 70.54°W", "2026-04-28 08:00:00Z"],
+            "first column": ["Sinker Location", "Latest Location:", "Latest Telemetry:", " Battery Voltage:"],
+            "second column": ["43.02°N, 70.54°W", "43.02°N, 70.54°W", "2026-04-28 08:00:00Z", "12.82v"],
         }, hide_header=True, border=False, height=120
     )
 
